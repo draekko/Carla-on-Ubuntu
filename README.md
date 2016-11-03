@@ -6,6 +6,6 @@ Building .deb packages of Carla audio plugin host for Ubuntu.
 * The build script will install self built linuxsampler packges to be able to build and install Carla on Ubuntu.
   
 # To build
-chmod 755 ./build_carla.sh
-./build_carla.sh
+chmod 755 ./build_carla.sh  
+./build_carla.sh  
 
