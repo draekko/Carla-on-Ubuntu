@@ -148,7 +148,7 @@ fi
 cd build-carla
 
 echo -e "\nVerifying package dependencies\n"
-#verify_packages
+verify_packages
 
 if [ $(dpkg-query -W -f='${Status}' liblinuxsampler-dev 2>/dev/null | grep -c "ok installed") -ne 0 ]; then
     echo -e "\nliblinuxsampler-dev already installed, not building it.\n"
@@ -160,7 +160,7 @@ else
 fi
 
 echo -e "\nbuilding carla\n"
-#build_carla
+build_carla
 echo -e "\ninstalling carla\n"
 install_carla
 
@@ -169,5 +169,5 @@ backup_debs
 
 cd ..
 
-#echo -e "\nclean up\n"
-#clean_up
+echo -e "\nclean up\n"
+clean_up
