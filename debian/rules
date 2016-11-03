@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+ARCH=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
+DEB_DH_SHLIBDEPS_ARGS="--dpkg-shlibdeps-params=--ignore-missing-info"
+DEB_DH_SHLIBDEPS_ARGS_ALL="--dpkg-shlibdeps-params=--ignore-missing-info"
+export DEB_DH_SHLIBDEPS_ARGS
+export DEB_DH_SHLIBDEPS_ARGS_ALL
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean -- EXPERIMENTAL_PLUGINS=true
+
+override_dh_auto_configure:
+	dh_auto_configure
+	$(MAKE) features
+
+override_dh_auto_build:
+	$(MAKE) EXPERIMENTAL_PLUGINS=true
+ifeq ($(ARCH),amd64)
+	make posix64
+else
+	make posix32
+endif
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+override_dh_auto_install:
+	dh_auto_install -- EXPERIMENTAL_PLUGINS=true PREFIX=/usr
+
+override_dh_install:
+	dh_install
+	rm debian/carla-git/usr/lib/carla/carla-bridge-posix*
+	rm debian/carla-git/usr/lib/carla/carla-discovery-posix*
+	rm debian/carla-lv2/usr/lib/lv2/carla.lv2/carla-bridge-posix*
+	rm debian/carla-lv2/usr/lib/lv2/carla.lv2/carla-discovery-posix*
+	rm debian/carla-vst/usr/lib/vst/carla.vst/carla-bridge-posix*
+	rm debian/carla-vst/usr/lib/vst/carla.vst/carla-discovery-posix*
+	rm -f debian/carla-data/usr/share/carla/resources/at1-ui
+	rm -f debian/carla-data/usr/share/carla/resources/bls1-ui
+	rm -f debian/carla-data/usr/share/carla/resources/rev1-ui
+	rm -f debian/carla-data/usr/share/carla/resources/zynaddsubfx-ui
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz -z9

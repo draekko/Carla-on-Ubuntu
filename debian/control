@@ -1,0 +1,90 @@
+Source: carla-git
+Section: sound
+Priority: optional
+Maintainer: Draekko <draekko.software@gmail.com>
+Build-Depends: debhelper (>= 8), pkg-config,
+  pyqt5-dev-tools, pyqt5-dev, qtbase5-dev, qtbase5-dev-tools, libgtk2.0-dev, libgtk-3-dev,
+  libasound2-dev, libmagic-dev, libpulse-dev, libjack-jackd2-dev, libx11-dev, libxft-dev,
+  libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev,
+  libgig-dev, liblscp-dev, liblinuxsampler-dev, libfluidsynth-dev, libprojectm-dev,
+  liblo-dev, libfltk1.3-compat-headers, libfltk1.3-dev, libzita-alsa-pcmi-dev,
+  libzita-convolver-dev, libzita-resampler-dev, libmxml-dev, libfftw3-dev,
+  libsmf-dev, libsndfile1-dev, python3-rdflib, python3-pyqt5.qtsvg,
+  libffi-dev, libglib2.0-dev, libclthreads-dev, libclxclient-dev,
+  libfreetype6-dev, libpng-dev, libxft-dev, zlib1g-dev, libcairo2-dev
+Standards-Version: 3.9.2
+
+Package: carla-git
+Architecture: any
+Pre-Depends: xz-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, carla-data, python3-pyqt4, python3-liblo
+Recommends: python3-pyqt5.qtopengl, python3-rdflib, carla-lv2, carla-vst
+Description: audio plugin host
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package contains the main application.
+
+Package: carla-data
+Architecture: all
+Pre-Depends: xz-utils
+Depends: ${misc:Depends}
+Description: audio plugin host (common data)
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package contains common non-binary data.
+
+Package: carla-lv2
+Architecture: any
+Pre-Depends: xz-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, carla-git
+Description: audio plugin host (LV2 plugin)
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package contains the LV2 plugin.
+
+Package: carla-vst
+Architecture: any
+Pre-Depends: xz-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, carla-git
+Description: audio plugin host (VST plugin)
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package contains the VST plugin.
+
+Package: carla-bridge-linux32
+Architecture: i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: carla-git
+Description: audio plugin host (linux32 bridge)
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package provides the linux32 bridge for loading 32bit Linux plugins.
+
+Package: carla-bridge-linux64
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: carla-git
+Description: audio plugin host (linux64 bridge)
+  Carla is an audio plugin host, with support for many audio drivers and plugin formats.
+  It has some nice features like automation of parameters via MIDI CC and full OSC control.
+  Currently supports LADSPA, DSSI, LV2, VST2/3 and AU plugin formats, plus GIG, SF2 and SFZ sounds banks.
+  .
+  This package provides the linux64 bridge for loading 64bit Linux plugins.
+
+Package: carla-plugins-lv2
+Architecture: any
+Pre-Depends: xz-utils
+Depends: ${misc:Depends}
+Description: Dummy package
+ This is a dummy package now superseeded by carla-lv2.
+

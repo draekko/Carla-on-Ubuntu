@@ -1,0 +1,13 @@
+/usr/bin/
+/usr/lib/carla/
+/usr/share/applications/
+/usr/share/mime/
+
+/usr/include/
+/usr/lib/pkgconfig/
+/usr/lib/python3/
+
+/usr/share/carla/resources/at1-ui
+/usr/share/carla/resources/bls1-ui
+/usr/share/carla/resources/rev1-ui
+/usr/share/carla/resources/zynaddsubfx-ui

@@ -1,0 +1,11 @@
+/usr/lib/carla/carla-bridge-lv2-gtk2  /usr/lib/lv2/carla.lv2/carla-bridge-lv2-gtk2
+/usr/lib/carla/carla-bridge-lv2-gtk3  /usr/lib/lv2/carla.lv2/carla-bridge-lv2-gtk3
+/usr/lib/carla/carla-bridge-lv2-qt4   /usr/lib/lv2/carla.lv2/carla-bridge-lv2-qt4
+/usr/lib/carla/carla-bridge-lv2-qt5   /usr/lib/lv2/carla.lv2/carla-bridge-lv2-qt5
+/usr/lib/carla/carla-bridge-lv2-x11   /usr/lib/lv2/carla.lv2/carla-bridge-lv2-x11
+/usr/lib/carla/carla-bridge-native    /usr/lib/lv2/carla.lv2/carla-bridge-native
+/usr/lib/carla/carla-discovery-native /usr/lib/lv2/carla.lv2/carla-discovery-native
+
+/usr/lib/carla/libcarla_interposer-safe.so /usr/lib/lv2/carla.lv2/libcarla_interposer-safe.so
+/usr/lib/carla/libcarla_interposer-x11.so  /usr/lib/lv2/carla.lv2/libcarla_interposer-x11.so
+/usr/lib/carla/libcarla_utils.so           /usr/lib/lv2/carla.lv2/libcarla_utils.so
