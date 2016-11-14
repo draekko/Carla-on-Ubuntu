@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-red=`tput setaf 1`
-green=`tput setaf 2`
-white=`tput setaf 7`
-reset=`tput sgr0`
-
 function verify_packages
 {
     # Make sure to have one of the following installed :
